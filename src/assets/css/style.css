@@ -143,54 +143,7 @@ i.glyphicon.glyphicon-search {
 i.glyphicon.glyphicon-phone {
   margin: 0 4% 0 0;
 }
-/*--cart--*/
-.itemContainer{
-	width:100%;
-	float:left;
-}
-.itemContainer div{
-	float:left;
-	margin: 5px 20px 5px 20px ;
-}
-.itemContainer a{
-	text-decoration:none;
-}
-.cartHeaders{
-	width:100%;
-	float:left;
-}
-.cartHeaders div{
-	float:left;
-	margin: 5px 20px 5px 20px ;
-}
-.item_add {
-  color: #000;
-  border:none;
-}	
-a.item_add {
- text-decoration: none;
-}		
-.grid_1 img{
-	margin-bottom:1em;
-}
-.box_1 h3{
-  color: #000;
-  font-size: 1em;
-}
-.box_1 h3 img{
-	margin-left: 5px;
-}
-.box_1 p a{
-  color: #B5B3B3;
-  font-size: 0.77em;
-}
-.total {
-  display: inline-block;
-}
-.cart.box_1{
-	float: right;
-	margin-top: 2px;
-}
+
 /*--- slider-css --*/
 .slider {
 	position: relative;
@@ -202,7 +155,7 @@ a.item_add {
   width: 100%;
   padding: 0;
   margin: 0;
-  }
+}
 .rslides li {
   -webkit-backface-visibility: hidden;
   position: absolute;
@@ -257,6 +210,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 .banner-mat{
 	padding:0;
 }
+
 /*--content--*/
 .content-top h1{
 	color:#000;

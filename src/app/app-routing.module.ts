@@ -8,12 +8,35 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  {path: "", component: HomeComponent},
-  {path:'blog', component: BlogComponent},
-  {path:'account', component: AccountComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'contact', component: ContactComponent},
-  { path: '**', component: HomeComponent }
+  	{
+		path: "",
+		component: HomeComponent, 
+		data:{title:"Home"}
+  	},
+  	{
+		path:'blog', 
+		component: BlogComponent,
+		data:{title:"Blog"}
+  	},
+  	{
+		path:'account', 
+		component: AccountComponent,
+		data:{title:"Account"}
+  	},
+  	{
+		path:'register', 
+		component: RegisterComponent,
+		data:{title:"Register"}
+	},
+	{
+		path:'contact', 
+		component: ContactComponent
+	},
+	{ 
+		path: '**', 
+		component: HomeComponent,
+		data:{title:"Home"} 
+	}
 ];
 
 @NgModule({

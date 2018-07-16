@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -6,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  constructor(private title: Title) { 
+    this.title.setTitle("Home");
+  }
 
   ngOnInit(){
-    var slider = document.getElementById("slider");
-    console.log(slider);
-
+    console.log("Home component initialized");
+    
     //Since the JQuery is loaded in the html file the $ variable is not recognized by the ts file but the code works perfectly
     $("#slider").responsiveSlides({
       auto: true,
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
       namespace: "callbacks",
       pager: true,
     });
-    console.log("On Init");
+
   }
 
 }
