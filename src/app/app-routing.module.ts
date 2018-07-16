@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemandesComponent } from './demandes/demandes.component';
 import { OffresComponent } from './offres/offres.component';
+import { ProduitsComponent } from './produits/produits.component';
 
 const routes: Routes = [
   	{
@@ -43,6 +44,11 @@ const routes: Routes = [
 		path: 'offres' ,
 		component: OffresComponent,
 		data:{title:"offres"} 
+	},
+	{ 
+		path: 'produits' ,
+		component: ProduitsComponent,
+		data:{title:"produits"} 
 	},
 	{ 
 		path: '**', 
