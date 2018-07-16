@@ -10,6 +10,8 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemandesComponent } from './demandes/demandes.component';
 import { OffresComponent } from './offres/offres.component';
+import { ProduitsComponent } from './produits/produits.component';
+import { ProduitsDetailsComponent } from './produits-details/produits-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { OffresComponent } from './offres/offres.component';
     RegisterComponent,
     ContactComponent,
     DemandesComponent,
-    OffresComponent
+    OffresComponent,
+    ProduitsComponent,
+    ProduitsDetailsComponent
   ],
   imports: [
     BrowserModule,
