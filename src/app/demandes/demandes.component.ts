@@ -13,6 +13,7 @@ export class DemandesComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("Demandes component initialzed");
   }
 
 }

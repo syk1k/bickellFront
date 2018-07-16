@@ -13,6 +13,7 @@ export class OffresComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("Offres component initialized");
   }
 
 }
