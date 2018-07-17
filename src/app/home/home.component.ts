@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(){
     console.log("Home component initialized");
     
-    //Since the JQuery is loaded in the html file the $ variable is not recognized by the ts file but the code works perfectly
+    //Since the JQuery is loaded in the html file the $ variable is not recognized by the .ts file but the code works perfectly
+    //To make the code find the jquery npm install is needed ...
     $("#slider").responsiveSlides({
       auto: true,
       speed: 500,
