@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-demandes',
@@ -8,12 +9,19 @@ import { Title } from '@angular/platform-browser';
 })
 export class DemandesComponent implements OnInit {
 
-  constructor(private title: Title) { 
+  demandes: Array<Articles>;
+  constructor(private title: Title, private data: DataService) { 
     this.title.setTitle("Demandes");
   }
 
   ngOnInit() {
-    console.log("Demandes component initialzed");
+    console.log("Demandes component initialized");
+    this.data.getDemandeArticles().subscribe(
+      data => {
+        this.demandes = data as Array<Articles>;
+        console.log(this.demandes);
+      }
+    )
   }
 
 }

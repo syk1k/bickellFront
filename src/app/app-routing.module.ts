@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DemandesComponent } from './demandes/demandes.component';
 import { OffresComponent } from './offres/offres.component';
 import { ProduitsComponent } from './produits/produits.component';
+import { ProduitsDetailsComponent } from './produits-details/produits-details.component';
 
 const routes: Routes = [
   	{
@@ -48,6 +49,11 @@ const routes: Routes = [
 	{ 
 		path: 'produits' ,
 		component: ProduitsComponent,
+		data:{title:"produits"} 
+	},
+	{ 
+		path: 'produit/:id' ,
+		component: ProduitsDetailsComponent,
 		data:{title:"produits"} 
 	},
 	{ 

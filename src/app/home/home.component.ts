@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +8,15 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private title: Title) { 
+
+  articles: Array<Articles>
+  constructor(private title: Title, private data: DataService) { 
     this.title.setTitle("Home");
   }
 
   ngOnInit(){
     console.log("Home component initialized");
     
-    //Since the JQuery is loaded in the html file the $ variable is not recognized by the .ts file but the code works perfectly
-    //To make the code find the jquery npm install is needed ...
     $("#slider").responsiveSlides({
       auto: true,
       speed: 500,
@@ -23,6 +24,13 @@ export class HomeComponent implements OnInit {
       pager: true,
     });
 
+    this.data.getArticles().subscribe(
+      data => {
+        this.articles = data as Array<Articles>;
+        console.log(this.articles);
+      }
+    )
   }
+
 
 }
