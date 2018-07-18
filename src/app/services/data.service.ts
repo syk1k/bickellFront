@@ -30,8 +30,8 @@ export class DataService {
     return this.http.get(this.baseApi+"offres/");
   }
 
-  getCategoryArticles(){
-    return this.http.get(this.baseApi+"articles/");
+  getCategories(){
+    return this.http.get(this.baseApi+"categorie/");
   }
 
   getBlog(){

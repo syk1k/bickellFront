@@ -17,3 +17,9 @@ interface Articles {
     url:any,
     id:any
 }
+
+interface Category{
+    url:any,
+    lib_categorie:any,
+    slug: any,
+}

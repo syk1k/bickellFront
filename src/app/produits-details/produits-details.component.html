@@ -30,15 +30,15 @@
           <div class="star-on">
             
             <div class="review">
-              <a href="#"> {{ article.vue }} reviews </a>/
-              <a href="#"> Faire un commentaire </a>
+              <a > {{ article.vue }} reviews </a>/
+              <button class="btn btn-secondary"> Faire un commentaire </button>
             </div>
             <div class="clearfix"> </div>
           </div>
           
-          <label  class="add-to item_price">$32.8</label>
+          <label  class="add-to item_price">{{ article.prix }} CFA</label>
 
-          <a href="#" class="cart item_add">More details</a>
+          <a href="#" class="cart item_add">Plus de details</a>
         </div>
 
       </div>
@@ -101,7 +101,11 @@
       <!--categories-->
       <div class=" rsidebar span_1_of_left">
         <h3 class="cate">Categories</h3>
-        <ul class="menu-drop"></ul>
+        <ul class="menu-drop" *ngIf="categories">
+          <li *ngFor="let categorie of categories">
+            <a href="">{{categorie.lib_categorie}}</a>
+          </li>
+        </ul>
       </div>
       <!--tag-->
       <div class="tag">	

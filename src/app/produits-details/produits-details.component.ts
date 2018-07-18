@@ -12,6 +12,7 @@ export class ProduitsDetailsComponent implements OnInit {
 
   articleId: number;
   article: Articles;
+  categories : Array<Category>;
   constructor(private route: ActivatedRoute, private data: DataService) { 
   }
 
@@ -24,6 +25,13 @@ export class ProduitsDetailsComponent implements OnInit {
         console.log(this.article);
       })
     });
+
+    this.data.getCategories().subscribe(
+      data => {
+        this.categories = data as Array<Category>;
+        console.log(this.categories)
+      }
+    )
   }
 
 }
