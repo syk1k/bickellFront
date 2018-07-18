@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../services/data.service';
+
 
 @Component({
   selector: 'app-produits-details',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProduitsDetailsComponent implements OnInit {
 
-  constructor() { }
+  articleId: number;
+  article: Articles;
+  constructor(private route: ActivatedRoute, private data: DataService) { 
+  }
 
   ngOnInit() {
+    this.route.params.subscribe( data => {
+      this.articleId = data.id;
+      console.log(this.articleId);
+      this.data.getArticle(this.articleId).subscribe( data => {
+        this.article = data as Articles;
+        console.log(this.article);
+      })
+    });
   }
 
 }

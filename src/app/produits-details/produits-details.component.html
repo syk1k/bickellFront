@@ -1,19 +1,20 @@
-<div class="single">
+<div class="single" *ngIf="article">
 
   <div class="container">
 
     <div class="col-md-9">
+
       <div class="col-md-5 grid">		
-        <div class="flexslider">
+        <div class="flexslider">          
             <ul class="slides">
-              <li data-thumb="images/si.jpg">
-                  <div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+              <li data-thumb="">
+                  <div class="thumb-image"> <img [src]="article.image1" data-imagezoom="true" class="img-responsive"> </div>
               </li>
-              <li data-thumb="images/si1.jpg">
-                   <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+              <li data-thumb="">
+                   <div class="thumb-image"> <img [src]="article.image2" data-imagezoom="true" class="img-responsive"> </div>
               </li>
-              <li data-thumb="images/si2.jpg">
-                 <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+              <li data-thumb="">
+                 <div class="thumb-image"> <img [src]="article.image3" data-imagezoom="true" class="img-responsive"> </div>
               </li> 
             </ul>
         </div>
@@ -22,14 +23,15 @@
       <div class="col-md-7 single-top-in">
 
         <div class="single-para simpleCart_shelfItem">
-          <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+          <h1>{{ article.lib_article }}</h1>
           
+          <p>{{ article.description }}</p> 
+
           <div class="star-on">
             
             <div class="review">
-              <a href="#"> 3 reviews </a>/
-              <a href="#">  Write a review</a>
+              <a href="#"> {{ article.vue }} reviews </a>/
+              <a href="#"> Faire un commentaire </a>
             </div>
             <div class="clearfix"> </div>
           </div>

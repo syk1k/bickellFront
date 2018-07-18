@@ -17,6 +17,9 @@ export class DataService {
   getArticles(){
     return this.http.get(this.baseApi+"articles/");
   }
+  getArticle(id){
+    return this.http.get(this.baseApi+"articles/"+id);
+  }
 
   getDemandeArticles(){
     return this.http.get(this.baseApi+"demandes/");
