@@ -23,3 +23,8 @@ interface Category{
     lib_categorie:any,
     slug: any,
 }
+
+interface login{
+    username:any,
+    password:any
+}
