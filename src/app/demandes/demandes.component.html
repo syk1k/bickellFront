@@ -12,11 +12,11 @@
                     <div class="col-md-3 col-md2" *ngFor="let demande of demandes">
 
                         <div class="col-md1 simpleCart_shelfItem">
-                            <a href="single.html">
+                            <a routerLink="/produit/{{demande.id}}">
                                 <img class="img-responsive" [src]="demande.image1" alt="" />
                             </a>
                             
-                            <h3><a href="single.html">{{ demande.lib_article }}</a></h3>
+                            <h3><a routerLink="/produit/{{demande.id}}">{{ demande.lib_article }}</a></h3>
 
                             <div class="price">
                                     <h5 class="item_price">$300</h5>
