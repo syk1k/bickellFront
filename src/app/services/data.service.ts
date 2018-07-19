@@ -41,4 +41,8 @@ export class DataService {
   getAccount(){
     return this.http.get(this.baseApi+"account/");
   }
+
+  login(user){
+    return this.http.post(this.baseApi+"api-token-auth/", user);
+  }
 }

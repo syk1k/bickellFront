@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
+import { FormControl, FormGroup } from "@angular/forms"
+
+declare var $ :any;
 
 @Component({
   selector: 'app-root',
@@ -9,6 +12,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   url: any;
+  searchForm;
   constructor(private title: Title, private route: Router){
     this.title.setTitle("Home");
     this.route.events.subscribe(
@@ -33,5 +37,15 @@ export class AppComponent {
       removalDelay: 300,
       mainClass: 'my-mfp-zoom-in'
     });
+
+    $(document).ready(function(){
+      $(".memenu").memenu();
+      console.log("Document ready");
+    });
+
+    this.searchForm = new FormGroup({
+      recherche: new FormControl()
+    });
+
   }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DataService } from '../services/data.service';
 
+declare var $ :any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

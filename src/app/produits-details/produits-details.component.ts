@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 
+declare var $: any;
+
 @Component({
   selector: 'app-produits-details',
   templateUrl: './produits-details.component.html',
@@ -23,15 +25,16 @@ export class ProduitsDetailsComponent implements OnInit {
       this.data.getArticle(this.articleId).subscribe( data => {
         this.article = data as Articles;
         console.log(this.article);
+
       })
     });
 
     this.data.getCategories().subscribe(
       data => {
         this.categories = data as Array<Category>;
-        console.log(this.categories)
+        console.log(this.categories);
       }
-    )
-  }
+    );
+  } 
 
 }

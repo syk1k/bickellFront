@@ -52,9 +52,15 @@
 
 				<div class="search-top">
 					<div class="login">
-						<form action="/">
+						<form [formGroup]="searchForm">
 							<input type="submit" value="">
-							<input type="text" value="Votre Recherche..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">		
+							<input 
+							type="text" 
+							value="Votre Recherche..." 
+							onfocus="this.value = '';" 
+							onblur="if (this.value == '') {this.value = '';}"
+							formControlName="recherche" 
+							>		
 						</form>
 					</div>
 				</div>	
