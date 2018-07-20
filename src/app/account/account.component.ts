@@ -38,7 +38,7 @@ export class AccountComponent implements OnInit {
         this.userToken = data as Token;
         this.cookie.set('token',this.userToken.token);
         location.reload(true);
-        this.router.navigateByUrl("");
+        this.router.navigateByUrl("admin/dasboard");
       },
       error => {
         console.log(error);

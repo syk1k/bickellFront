@@ -10,27 +10,31 @@ import { DemandesComponent } from './demandes/demandes.component';
 import { OffresComponent } from './offres/offres.component';
 import { ProduitsComponent } from './produits/produits.component';
 import { ProduitsDetailsComponent } from './produits-details/produits-details.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateProduitComponent } from './create-produit/create-produit.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 const routes: Routes = [
   	{
 		path: "",
-		component: HomeComponent, 
-		data:{title:"Home"}
+		component: HomeComponent,
+  	},
+  	{
+		path: "admin/dasboard",
+		component: DashboardComponent,
   	},
   	{
 		path:'blog', 
 		component: BlogComponent,
-		data:{title:"Blog"}
   	},
   	{
 		path:'account', 
 		component: AccountComponent,
-		data:{title:"Account"}
   	},
   	{
 		path:'register', 
 		component: RegisterComponent,
-		data:{title:"Register"}
 	},
 	{
 		path:'contact', 
@@ -39,27 +43,34 @@ const routes: Routes = [
 	{ 
 		path: 'demandes', 
 		component: DemandesComponent,
-		data:{title:"Demandes"} 
 	},
 	{ 
 		path: 'offres' ,
 		component: OffresComponent,
-		data:{title:"offres"} 
+	},
+	{ 
+		path: 'create/user' ,
+		component: CreateUserComponent,
+	},
+	{ 
+		path: 'create/product' ,
+		component: CreateProduitComponent,
+	},
+	{ 
+		path: 'create/post' ,
+		component: CreatePostComponent,
 	},
 	{ 
 		path: 'produits' ,
 		component: ProduitsComponent,
-		data:{title:"produits"} 
 	},
 	{ 
 		path: 'produit/:id' ,
 		component: ProduitsDetailsComponent,
-		data:{title:"produits"} 
 	},
 	{ 
 		path: '**', 
 		component: HomeComponent,
-		data:{title:"Home"} 
 	},
 ];
 

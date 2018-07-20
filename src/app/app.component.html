@@ -10,20 +10,22 @@
 			<div class="col-sm-4">
 					
 			</div>
-		
-			<div class="col-sm-4 header-left" *ngIf="notLoggedIn">		
-				<p class="log"><a routerLink="account"  >Login</a>
-					<span>or</span><a  routerLink="register"  >Signup</a>
-				</p>
-
-				<div class="clearfix"> </div>
-			</div>
-
-			<div class="col-sm-4 header-left" *ngIf="token">		
-				<p class="log"><a href="javascript:void(0)" (click)="logout()">Logout</a>
-				</p>
-
-				<div class="clearfix"> </div>
+			<div class="col-sm-4">
+					<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							  Dashboard
+							  <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							  <li><a routerLink="create/user">Create User</a></li>
+							  <li><a routerLink="create/product">Create a product</a></li>
+							  <li><a routerLink="create/post">Create a post</a></li>
+							  <li role="separator" class="divider"></li>
+							  <li><a href="#">Statistics</a></li>
+							  <li role="separator" class="divider"></li>
+							  <li><a href="javascript:void(0)">Logout</a></li>
+							</ul>
+						  </div>	
 			</div>
 
 			<div class="clearfix"> </div>
@@ -77,6 +79,7 @@
 	</div>
 
 </div>
+<hr>
 
 <router-outlet></router-outlet>
 

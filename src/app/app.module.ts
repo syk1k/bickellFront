@@ -16,7 +16,11 @@ import { ProduitsComponent } from './produits/produits.component';
 import { ProduitsDetailsComponent } from './produits-details/produits-details.component';
 
 
-import { CookieService } from "ngx-cookie-service"
+import { CookieService } from "ngx-cookie-service";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateProduitComponent } from './create-produit/create-produit.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreatePostComponent } from './create-post/create-post.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { CookieService } from "ngx-cookie-service"
     DemandesComponent,
     OffresComponent,
     ProduitsComponent,
-    ProduitsDetailsComponent
+    ProduitsDetailsComponent,
+    DashboardComponent,
+    CreateProduitComponent,
+    CreateUserComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
