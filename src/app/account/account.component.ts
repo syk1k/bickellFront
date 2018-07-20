@@ -21,7 +21,7 @@ export class AccountComponent implements OnInit {
   LoginForm;
   token = "UNKNOWN";
 
-  constructor(private title: Title, private data: DataService, private cookie: CookieService, private router: Router, private location: Location) { 
+  constructor(private title: Title, private data: DataService, private cookie: CookieService, private router: Router) { 
     this.title.setTitle("Account");
   }
 
@@ -37,7 +37,8 @@ export class AccountComponent implements OnInit {
       data => {
         this.userToken = data as Token;
         this.cookie.set('token',this.userToken.token);
-        this.location.go("http://google.com");
+        location.reload(true);
+        this.router.navigateByUrl("");
       },
       error => {
         console.log(error);
