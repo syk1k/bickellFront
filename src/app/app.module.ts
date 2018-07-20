@@ -15,6 +15,9 @@ import { OffresComponent } from './offres/offres.component';
 import { ProduitsComponent } from './produits/produits.component';
 import { ProduitsDetailsComponent } from './produits-details/produits-details.component';
 
+
+import { CookieService } from "ngx-cookie-service"
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,7 @@ import { ProduitsDetailsComponent } from './produits-details/produits-details.co
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

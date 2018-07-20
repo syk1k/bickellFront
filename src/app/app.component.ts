@@ -3,6 +3,8 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { FormControl, FormGroup } from "@angular/forms"
 
+import { CookieService } from "ngx-cookie-service";
+
 declare var $ :any;
 
 @Component({
@@ -13,15 +15,21 @@ declare var $ :any;
 export class AppComponent {
   url: any;
   searchForm;
-  constructor(private title: Title, private route: Router){
+  token: any;
+  notLoggedIn: Boolean = true;
+  
+  constructor(private title: Title, private route: Router, private cookie: CookieService){
     this.title.setTitle("Home");
     this.route.events.subscribe(
       
       (url: NavigationEnd) => {
         this.url = url.url;
       }
-    )
-    console.log(this.url);
+    );
+    this.token = this.cookie.get("token");
+    if (this.token){
+      this.notLoggedIn = false;
+    }
   }
 
   ngOnInit(){
@@ -47,5 +55,12 @@ export class AppComponent {
       recherche: new FormControl()
     });
 
+  }
+
+  logout(){
+    console.log("Logout");
+    this.token = null;
+    this.cookie.delete("token");
+    this.notLoggedIn = true;
   }
 }

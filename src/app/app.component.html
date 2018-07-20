@@ -11,9 +11,16 @@
 					
 			</div>
 		
-			<div class="col-sm-4 header-left">		
+			<div class="col-sm-4 header-left" *ngIf="notLoggedIn">		
 				<p class="log"><a routerLink="account"  >Login</a>
 					<span>or</span><a  routerLink="register"  >Signup</a>
+				</p>
+
+				<div class="clearfix"> </div>
+			</div>
+
+			<div class="col-sm-4 header-left" *ngIf="token">		
+				<p class="log"><a href="javascript:void(0)" (click)="logout()">Logout</a>
 				</p>
 
 				<div class="clearfix"> </div>
