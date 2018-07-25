@@ -1,3 +1,35 @@
-<p>
-  create-user works!
-</p>
+
+
+<div class="container">
+	<div class="register">
+		<h1>Create User</h1>
+		  	  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)"> 
+				   <div class="col-md-6  register-top-grid">
+					
+					  <div class="mation">
+              <span>Username</span>
+              <input type="text" id="username" name="username" formControlName="username"> 
+            
+              <span>Email Address</span>
+              <input type="text" id="email" name="email" formControlName="email"> 
+            </div>
+            <div class="clearfix"> </div>
+              
+            </div>
+              <div class=" col-md-6 register-bottom-grid">
+                
+                <div class="mation">
+                  <span>Password</span>
+                  <input type="password" id="password" name="password" formControlName="password">
+                  <span>Status</span>
+                  <label class="checkbox"><input type="checkbox" name="is_staff" checked formControlName="is_staff"><i> </i>Is Staff</label>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="register-but">
+                  <input type="submit" value="submit">
+                  <div class="clearfix"> </div>
+             </div>
+				</form>
+		   </div>
+</div>

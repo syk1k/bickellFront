@@ -45,4 +45,12 @@ export class DataService {
   login(user){
     return this.http.post(this.baseApi+"api-token-auth/", user);
   }
+
+  createUser(user, httpOptions){
+    return this.http.post(this.baseApi+"users/",user, httpOptions);
+  }
+
+  getUsers(httpOptions){
+    return this.http.get(this.baseApi+"users", httpOptions);
+  }
 }

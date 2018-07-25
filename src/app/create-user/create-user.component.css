@@ -1,0 +1,32 @@
+input[type="password"] {
+	border: 1px solid #bbb;
+	outline-color:#52d0c4;
+	width: 96%;
+	font-size:0.9em;
+	padding:10px;
+	margin: 0.5em 0;
+}
+
+input[type="text"] {
+	border: 1px solid #bbb;
+	outline-color:#52d0c4;
+	width: 96%;
+	font-size:0.9em;
+	padding:10px;
+	margin: 0.5em 0;
+}
+
+input[type="submit"] {
+	background:#52d0c4;
+	color: #FFF;
+	font-size: 0.9em;
+	padding: 0.4em 1em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	display: inline-block;
+	text-transform: uppercase;
+	border:none;
+	outline:none;
+}
