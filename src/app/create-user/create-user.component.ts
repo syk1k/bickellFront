@@ -31,6 +31,7 @@ export class CreateUserComponent implements OnInit {
       values.email = " ";
     }
     console.log(values);
+    
     const httpOptions = {
       headers: new HttpHeaders({
         "Authorization": "Token 21f30a249d150465b1a7e42e48b85a28924f8656"

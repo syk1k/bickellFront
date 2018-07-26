@@ -2,42 +2,80 @@
 
 <div class="container">
 	<div class="register">
-		<h1>Nouveau Produit</h1>
-		  	  <form [formGroup]="produitFrom"> 
-				 <div class="col-md-6  register-top-grid">
-					
-					<div class="mation">
-						<span>First Name</span>
-						<input type="text" id="username" name="username" formControlName="username"> 
-					
-						<span>Last Name</span>
-						<input type="text" id="lastname" name="lastname" formControlName="lastname"> 
-					 
-						 <span>Email Address</span>
-						 <input type="text" id="email" name="email" formControlName="email"> 
-					</div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
-					   </a>
-					 </div>
-				     <div class=" col-md-6 register-bottom-grid">
-						   
-							<div class="mation">
-								<span>Password</span>
-								<input type="text" id="password" name="password" formControlName="password">
-								<span>Confirm Password</span>
-								<input type="text" id="confirm_password" name="confirm_password" formControlName="confirm_password">
-							</div>
-					 </div>
-					 <div class="clearfix"> </div>
-				</form>
+		<h1>Create a new product</h1>
+			<form [formGroup]="produitForm" (ngSubmit)="onSubmit(produitForm.value)">
+
+				<div class="col-md-4  register-top-grid">
 				
-				<div class="register-but">
-				   <form [formGroup]="validateForm">
-					   <input type="submit" value="submit">
-					   <div class="clearfix"> </div>
-				   </form>
+					<div class="mation">
+						<span>Libelle de l'Article</span>
+						<input type="text" id="lib_article" name="lib_article" formControlName="lib_article"> 
+
+						<span>Quantite</span>
+						<input type="number" id="quantite" name="quantite" formControlName="quantite">
+
+						<span>Categorie</span>
+						<select (mouseover)="fetchCategories()" *ngIf="categories; else nocategorie" name="categorie" formControlName="categorie" id="categorie"> <!--Supplement an id here instead of using 'text'-->
+							<option *ngFor="let category of categories" value="{{category.url}}">{{category.lib_categorie}}</option>
+						</select>
+						<ng-template #nocategorie>
+							<select (mouseover)="fetchCategories()" name="categorie" formControlName="categorie" id="categorie"> <!--Supplement an id here instead of using 'text'-->
+								<option value="{{nocategory}}">{{nocategory}}</option> 
+							</select>
+						</ng-template>
+					</div>
+					<div class="clearfix"> </div>
+			
 				</div>
-		   </div>
+
+				<div class=" col-md-4 register-bottom-grid">
+			
+					<div class="mation">
+						<span>Type d'Activite</span>
+						<select name="type_activite" formControlName="type_activite" id="type_activite"> <!--Supplement an id here instead of using 'text'-->
+							<option value="Service">Service</option> 
+							<option value="Produit">Produit</option>
+						</select>
+						
+						<span>Prix</span>
+						<input type="text" id="prix" name="prix" formControlName="prix">
+
+						<span>Image principale</span>
+						<file-upload formControlName="images" id="images" name="images"></file-upload>						
+					</div>
+				</div>
+
+				<div class=" col-md-4 register-bottom-grid">
+			
+					<div class="mation">
+						
+						<span>Type de produit</span>
+						<select name="type_offre" formControlName="type_offre" id="type_offre"> <!--Supplement an id here instead of using 'text'-->
+							<option value="offre">Offre</option> 
+							<option value="demande">Demande</option>
+						</select>
+
+						<span>Unite</span>
+						<select name="unite" formControlName="unite" id="unite"> <!--Supplement an id here instead of using 'text'-->
+							<option value="carton">Carton</option> 
+							<option value="casier">Casier</option>
+						</select>
+						
+						
+					</div>
+
+				</div>
+
+				<div class="col-md-12 register-bottom-grid">
+					<span>Description</span>
+					<textarea id="description" name="description" formControlName="description"> </textarea>
+				</div>
+
+				<div class="clearfix"> </div>
+				<div class="register-but">
+					<input type="submit" value="submit">
+					<div class="clearfix"> </div>
+				</div>
+			</form>
+		</div>
 </div>
